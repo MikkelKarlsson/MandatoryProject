@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>View Page</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+
+<div class="table-striped" id="viewcars">
+    <h3 style="margin-left: 3.9em">All Cars</h3>
+    <table class="table-striped" style="width: 90%;   margin-left: auto;
+           margin-right: auto;">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Registration</th>
+
+        </tr>
+        </thead>
+        <tr th:each="car: ${cars}">
+            <td th:text="${car.id}"/>
+            <td th:text="${car.brand}"/>
+            <td th:text="${car.model}"/>
+            <td th:text="${car.registration}"/>
+            <!--<td>
+                <a th:href="@{'/deletecar/'+${car.id}}">
+                    <button class="btnDeleteCar" onclick="return confirm('Are you sure you want to delete?')">
+                        Delete
+                    </button>
+                </a>
+            </td>
+            <td>
+                <a th:data-label="${car.id}" class="btnUpdateCar" data-target="#modalUpdateForm" data-toggle="modal" href="#">UPDATE</a>
+            </td>
+        </tr>-->
+    </table>
+
+
+</div>
+<a href="/createcar" style="margin-left: 7em; margin-top: 1em">Create New car</a>
+
+
+<div class="table-striped" id="viewpersons">
+    <h3 style="margin-left: 3.9em; margin-top: 2em">All Persons</h3>
+    <table class="table-striped" style="width: 90%;   margin-left: auto;
+           margin-right: auto;">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+
+
+        </tr>
+        </thead>
+        <tr th:each="person: ${persons}">
+            <td th:text="${person.id}"/>
+            <td th:text="${person.first_Name}"/>
+            <td th:text="${person.last_Name}"/>
+
+            <!--<td>
+                <a th:href="@{'/deleteperson/'+${person.id}}">
+                    <button class="btnDeletePerson" onclick="return confirm('Are you sure you want to delete?')">
+                        Delete
+                    </button>
+                </a>
+            </td>-->
+            <!--<td>
+                <a th:data-label="${person.id}" class="btnUpdatePerson" data-target="#modalUpdateForm" data-toggle="modal" href="#">UPDATE</a>
+            </td>-->
+        </tr>
+    </table>
+</div>
+
+<div class="table-striped" id="viewcarcollectorgroups">
+    <h3 style="margin-left: 3.9em; margin-top: 2em">All Car Collector Groups</h3>
+    <table class="table-striped" style="width: 90%;   margin-left: auto;
+           margin-right: auto;">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Group Name</th>
+        </tr>
+        </thead>
+        <tr th:each="car_collector_group: ${car_collector_groups}">
+            <td th:text="${car_collector_group.id}"/>
+            <td th:text="${car_collector_group.group_Name}"/>
+
+            <!--<td>
+                <a th:href="@{'/deletecarcollectorgroup/'+${carcollectorgroup.id}}">
+                    <button class="btnDeleteCarcollectorgroup" onclick="return confirm('Are you sure you want to delete?')">
+                        Delete
+                    </button>
+                </a>
+            </td>
+            <td>
+                <a th:data-label="${carcollectorgroup.id}" class="btnUpdateCarcollectorgroup" data-target="#modalUpdateForm" data-toggle="modal" href="#">UPDATE</a>
+            </td>-->
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
